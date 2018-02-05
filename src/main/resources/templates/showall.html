@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title> </title>
+</head>
+<body>
+
+<a href="/">Current Inventory</a><br />
+brand :<span th:text="${newcosmo.brand}" ></span><br />
+cprice :<span th:text="${newcosmo.cprice}" ></span><br />
+popularity :<span th:text="${newcosmo.popularity}" ></span><br />
+<a th:href="@{/detail/{id}(id=${newcosmo.id})}">Detail</a>
+
+<a href="/">Current Inventory</a><br />
+strength :<span th:text="${newci.strength}" ></span><br />
+Ciprice :<span th:text="${newci.Ciprice}" ></span><br />
+<a th:href="@{/detail/{id}(id=${newci.id})}">Detail</a>
+
+<a href="/">Current Inventory</a><br />
+crunchiness :<span th:text="${newsnack.crunchiness}" ></span><br />
+Sprice :<span th:text="${newsnack.Sprice}" ></span><br />
+<a th:href="@{/detail/{id}(id=${newsnack.id})}">Detail</a>
+
+<a href="/grocerystore">Go Back To Grocery Store</a><br/>
+
+</body>
+</html>

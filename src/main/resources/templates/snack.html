@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title> Snacks </title>
+</head>
+<body>
+<form action="#"
+      th:action="@{/snack}"
+      th:object="${newsnack}"
+      method="post">
+    <input type="hidden" th:field="*{id}" />
+    <label>crunchiness: </label><input type="text" th:field="*{crunchiness}" />
+    <span th:if="${#fields.hasErrors('crunchiness')}" th:errors="*{crunchiness}"></span><br />
+    <label>Sprice: </label><input type="text" th:field="*{Sprice}" />
+    <span th:if="${#fields.hasErrors('Sprice')}" th:errors="*{Sprice}"></span><br />
+    <br />
+    <input type="submit" value="Submit" /><input type="reset" value="Reset"/>
+    <a href="/grocerystore">Go Back To Grocery Store</a><br/>
+</form>
+</body>
+</html>

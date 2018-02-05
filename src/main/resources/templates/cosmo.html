@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title> Cosmotics </title>
+</head>
+<body>
+<form action="#"
+      th:action="@{/cosmo}"
+      th:object="${newcosmo}"
+      method="post">
+    <input type="hidden" th:field="*{id}" />
+    <label>brand: </label><input type="text" th:field="*{brand}" />
+    <span th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}"></span><br />
+    <label>cprice: </label><input type="text" th:field="*{cprice}" />
+    <span th:if="${#fields.hasErrors('cprice')}" th:errors="*{cprice}"></span><br />
+    <label>popularity: </label><input type="text" th:field="*{popularity}" />
+    <span th:if="${#fields.hasErrors('popularity')}" th:errors="*{popularity}"></span><br />
+    <br />
+    <input type="submit" value="Submit" /><input type="reset" value="Reset"/>
+    <a href="/grocerystore">Go Back To Grocery Store</a><br/>
+</form>
+</body>
+</html>
